@@ -1,0 +1,19 @@
+19:49:05 **** Build of configuration Release for project TossTurn ****
+make -f Makefile all 
+./obj/PLUTOX/src/main/PlutoPilot.o
+%% PlutoPilot.cpp
+src/main/PlutoPilot.cpp: In function 'void plutoLoop()':
+src/main/PlutoPilot.cpp:33:68: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+ if(Acceleration.getNetAcc()<2&&(!ABS(angle)>800)&&(!FlightStatus.check(FS_CRASHED)))
+                                                                    ^
+src/main/PlutoPilot.cpp:33:68: warning: comparison of constant '800' with boolean expression is always false [-Wbool-compare]
+ if(Acceleration.getNetAcc()<2&&(!ABS(angle)>800)&&(!FlightStatus.check(FS_CRASHED)))
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+arm-none-eabi-g++ -o obj/Experience_PLUTOX.elf obj/PLUTOX/src/main/PlutoPilot.o -lm -nostartfiles --specs=nosys.specs -lc -lnosys -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant -Wdouble-promotion -flto -fuse-linker-plugin -Os -ggdb3 -DDEBUG -static -L./libs -lpluto_0.3 -Wl,-gc-sections,-Map,./obj/Experience_PLUTOX.map -Wl,-L./ld -T./ld/stm32_flash_f303_256k.ld
+arm-none-eabi-size ./obj/Experience_PLUTOX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  73164	   1244	   7756	  82164	  140f4	./obj/Experience_PLUTOX.elf
+arm-none-eabi-objcopy -O ihex --set-start 0x8000000 obj/Experience_PLUTOX.elf obj/Experience_PLUTOX.hex
+
+19:49:15 Build Finished. 0 errors, 2 warnings. (took 10s.75ms)
+
