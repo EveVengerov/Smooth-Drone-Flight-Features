@@ -6206,3 +6206,9 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.cdt.re
 
 !ENTRY org.eclipse.ui 4 4 2021-09-27 22:04:33.009
 !MESSAGE Conflicting handlers for CorePlugin.Command.DfuNormalFlash: {coreplugin.handlers.DfuFlasher} vs {coreplugin.handlers.DfuFlasher}
+
+!ENTRY org.eclipse.ui 4 4 2021-09-27 22:58:31.536
+!MESSAGE Conflicting handlers for CorePlugin.Command.PXNormalFlash: {coreplugin.handlers.FlashHandler@1d6d5c2a} vs {coreplugin.handlers.FlashHandler}
+
+!ENTRY org.eclipse.ui 4 4 2021-09-27 22:58:31.538
+!MESSAGE Conflicting handlers for CorePlugin.Command.DfuNormalFlash: {coreplugin.handlers.DfuFlasher@d06a341} vs {coreplugin.handlers.DfuFlasher}
